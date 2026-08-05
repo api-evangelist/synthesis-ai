@@ -1,0 +1,40 @@
+generated: '2026-08-05'
+method: probed
+source: dig + TCP/TLS probe of synthesis.ai from the enrichment run
+note: >-
+  synthesis.ai no longer serves HTTPS at all — TCP 443 is refused — and the
+  domain resolves to Gandi parking IPs. Mail (Google Workspace MX) is still
+  configured on a domain that publishes neither SPF nor DMARC, so the domain is
+  trivially spoofable. Absence of a record here is observed data, not a gap in
+  the probe.
+hosts:
+- host: synthesis.ai
+  https: false
+  https_error: connection refused on tcp/443
+  http: true
+  http_status: 200
+  http_body: Gandi "parked by the owner" holding page (2332 bytes)
+  hsts: false
+- host: www.synthesis.ai
+  cname: webredir.vip.gandi.net.
+  https: false
+  https_error: connection refused on tcp/443
+- host: docs.synthesis.ai
+  resolves: false
+  note: no A/CNAME record; the former Human API documentation host is gone
+- host: api.synthesis.ai
+  resolves: false
+domains:
+- domain: synthesis.ai
+  registrar_dns: gandi.net
+  dnssec: false
+  caa: []
+  spf: false
+  dmarc: false
+  dmarc_policy: null
+  mx:
+  - ASPMX.L.GOOGLE.COM.
+  - ALT1.ASPMX.L.GOOGLE.COM.
+  - ALT2.ASPMX.L.GOOGLE.COM.
+  - ALT3.ASPMX.L.GOOGLE.COM.
+  - ALT4.ASPMX.L.GOOGLE.COM.

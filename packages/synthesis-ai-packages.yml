@@ -1,0 +1,37 @@
+generated: '2026-08-05'
+method: searched
+source: https://pypi.org/pypi/synthesisai/json
+note: >-
+  Synthesis AI was dissolved during 2024-2025 and its API is offline, but the
+  first-party client library it published remains live on PyPI and in the
+  Synthesis-AI-Dev GitHub organization. Registries probed with no first-party
+  result: npm, RubyGems, Packagist, crates.io, NuGet, Maven Central, pkg.go.dev.
+packages:
+- language: python
+  registry: pypi
+  name: synthesisai
+  version: 0.5.2
+  released: '2023-09-25'
+  url: https://pypi.org/project/synthesisai/
+  source: https://github.com/Synthesis-AI-Dev/synthesisai
+  install: pip install synthesisai
+  license: MIT
+  description: Python library for loading synthetic data for ML use cases (loads
+    Synthesis AI job output into ML pipelines).
+  official: true
+  maintainer_email: anish@synthesis.ai
+  status: unmaintained
+- language: python
+  registry: github
+  name: face_api_dataset
+  url: https://github.com/Synthesis-AI-Dev/face_api_dataset
+  install: pip install git+https://github.com/Synthesis-AI-Dev/face_api_dataset
+  description: Library and code for working with Synthesis AI's Face API outputs.
+    Superseded by synthesisai; never published to PyPI (pypi.org/pypi/face_api_dataset
+    returns 404).
+  official: true
+  status: superseded
+registries_probed:
+- {registry: pypi, package: synthesisai, status: 200}
+- {registry: pypi, package: face_api_dataset, status: 404}
+- {registry: npm, package: synthesis-ai, status: 404}

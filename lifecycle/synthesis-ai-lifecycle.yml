@@ -1,0 +1,49 @@
+generated: '2026-08-05'
+method: probed
+source: live probes of synthesis.ai / docs.synthesis.ai / api.synthesis.ai plus the
+  Internet Archive capture of docs.synthesis.ai
+status: discontinued
+summary: >-
+  Synthesis AI's public API surface is retired. The company shipped FaceAPI
+  (labeled facial imagery), HumanAPI (whole-body 3D digital humans, launched
+  November 2021) and an Identities API, all driven by JSON job descriptions
+  submitted through a first-party CLI or web console. The company was dissolved
+  during 2024-2025; synthesis.ai is now a Gandi parking page served only over
+  HTTP, and both docs.synthesis.ai and api.synthesis.ai have been removed from
+  DNS. No sunset notice, deprecation policy, status page or migration guide was
+  published — the surface simply went away.
+retired_surface:
+  products:
+  - name: FaceAPI
+    description: Synthetic data-as-a-service for labeled facial imagery; the company
+      reported delivering more than 10M labeled facial images.
+  - name: HumanAPI
+    description: Programmatic generation of whole-body 3D digital humans with
+      pixel-level labels, launched November 2021.
+    docs_archived: http://web.archive.org/web/2023/https://docs.synthesis.ai/
+  - name: Identities API
+    description: Selection of identities to be rendered by the Human API.
+  interface: JSON job document submitted via CLI client or web console; job ID
+    returned, output downloaded by job ID after email notification.
+  archived_docs:
+  - http://web.archive.org/web/2023/https://docs.synthesis.ai/
+  - http://web.archive.org/web/2021/https://docs.synthesis.ai/cli.html
+versioning:
+  scheme: document-version
+  current: 'input JSON "version": 1'
+  source: examples/synthesis-ai-human-api-job-complex-example.json
+deprecation:
+  policy_url: null
+  sunset_header: null
+  note: none published; the API host was withdrawn without a documented deprecation
+    or sunset process
+sla: null
+status_page: null
+evidence:
+- {url: 'http://synthesis.ai/', status: 200, note: 'Gandi "parked by the owner" holding
+    page; identical 2332-byte body returned for every path probed, including a control
+    path — every 200 from this host is a soft-404'}
+- {url: 'https://synthesis.ai/', status: 0, note: connection refused on tcp/443}
+- {url: 'https://docs.synthesis.ai/', status: 0, note: host does not resolve}
+- {url: 'https://api.github.com/orgs/Synthesis-AI-Dev', status: 200, note: 'GitHub
+    organization still public, 17 repositories, last activity 2025'}

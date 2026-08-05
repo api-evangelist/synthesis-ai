@@ -1,8 +1,21 @@
 aid: synthesis-ai
 name: Synthesis AI
-description: 'Synthesis AI is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Synthesis AI was a San Francisco synthetic-data company, founded in 2019
+  by Yashar Behzadi, that generated photorealistic, pixel-perfectly labeled images
+  of humans for training computer-vision models. It sold that capability as an API:
+  FaceAPI for labeled facial imagery and, from November 2021, HumanAPI for whole-body
+  3D digital humans, plus an Identities API for selecting subjects. Jobs were described
+  as JSON documents (identities, expressions, gaze, head turn, hair, accessories, bodies
+  and clothing, gesture animations, camera and light rigs, HDRI environments) and submitted
+  through a command-line client or web console, with rendered output downloaded by
+  job ID. The company raised a $17M Series A in 2022 on more than $24M total funding
+  and was dissolved during 2024-2025. Its API is gone: synthesis.ai is a parked Gandi
+  holding page reachable only over HTTP, and docs.synthesis.ai and api.synthesis.ai
+  no longer resolve. What survives publicly is the Synthesis-AI-Dev GitHub organization
+  (17 public repositories, including the Human API input-JSON appendix and the client
+  tooling) and the official synthesisai package on PyPI.'
 url: https://raw.githubusercontent.com/api-evangelist/synthesis-ai/refs/heads/main/apis.yml
+image: https://avatars.githubusercontent.com/u/55990723?v=4
 x-type: company
 x-source: harvest:secondary-market
 x-tier: stub
@@ -12,6 +25,13 @@ created: '2026-08-05'
 modified: '2026-08-05'
 tags:
 - Company
+- Synthetic Data
+- Computer Vision
+- Machine Learning
+- Artificial Intelligence
+- Digital Humans
+- Training Data
+- 3D
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -20,4 +40,42 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
+  url: http://synthesis.ai/
+- type: GitHubOrganization
+  url: https://github.com/Synthesis-AI-Dev
+- type: LinkedIn
+  url: https://www.linkedin.com/company/synthesis-ai
+- type: SecondaryMarket
   url: https://forgeglobal.com/synthesis-ai_stock/
+- type: Packages
+  url: packages/synthesis-ai-packages.yml
+- type: Lifecycle
+  url: lifecycle/synthesis-ai-lifecycle.yml
+- type: DomainSecurity
+  url: security/synthesis-ai-domain-security.yml
+- type: Examples
+  name: Human API job request (complex example, verbatim from the provider's GitHub)
+  url: examples/synthesis-ai-human-api-job-complex-example.json
+x-enrichment:
+  date: '2026-08-05'
+  status: minimal
+  artifacts_added: 4
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: defunct
+  detail: Synthesis AI was dissolved during 2024-2025 — synthesis.ai now answers only
+    over HTTP with a Gandi "parked by the owner" page (the identical 2332-byte body
+    is returned for every path, including a control path, so every 200 is a soft-404),
+    and the FaceAPI/HumanAPI documentation host docs.synthesis.ai has been removed
+    from DNS entirely.
+  evidence:
+  - url: http://synthesis.ai/
+    status: 200
+  - url: http://synthesis.ai/openapi.json
+    status: 200
+  - url: http://synthesis.ai/this-path-does-not-exist-ae-control-12345
+    status: 200
+  - url: https://docs.synthesis.ai/
+    status: 0
+  checked: '2026-08-05'
