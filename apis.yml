@@ -15,6 +15,17 @@ description: 'Synthesis AI was a San Francisco synthetic-data company, founded i
   (17 public repositories, including the Human API input-JSON appendix and the client
   tooling) and the official synthesisai package on PyPI.'
 url: https://raw.githubusercontent.com/api-evangelist/synthesis-ai/refs/heads/main/apis.yml
+deliveryModel:
+  model: library
+  open_source: false
+  commercial: false
+  callable_host: false
+  label: Library · distributed through package registries, no callable service
+  confidence: low
+  source:
+  - none
+  generated: '2026-08-28'
+  method: derived
 image: https://avatars.githubusercontent.com/u/55990723?v=4
 x-type: company
 x-source: harvest:secondary-market
