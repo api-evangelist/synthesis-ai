@@ -49,8 +49,8 @@ modified: '2026-08-05'
 tags:
 - Company
 - Synthetic Data
-- Computer-Vision
-- Machine-Learning
+- Computer Vision
+- Machine Learning
 - Artificial Intelligence
 - Digital Humans
 - Training Data
@@ -64,6 +64,8 @@ tags_raw:
 - Digital Humans
 - Training Data
 - 3D
+- Computer-Vision
+- Machine-Learning
 apis: []
 maintainers:
 - FN: Kin Lane
